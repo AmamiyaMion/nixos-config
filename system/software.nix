@@ -2,12 +2,12 @@
 
 {
   imports = [
-  	./fcitx.nix
-  	./dae.nix
+    ./fcitx.nix
+    ./dae.nix
   ];
 
   # FireFox
-	programs.firefox.enable = true;
+  programs.firefox.enable = true;
 
   # Flatpak
   services.flatpak.enable = true;
@@ -90,5 +90,6 @@
     iw
     amdgpu_top
     piper
+    bat
   ];
 }
