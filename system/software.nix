@@ -91,5 +91,6 @@
     amdgpu_top
     piper
     bat
+    sbctl
   ];
 }
