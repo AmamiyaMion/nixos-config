@@ -4,7 +4,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     mion-nur.url = "github:AmamiyaMion/nur";
-    mion-nur.input.nixpkgs.follows = "nixpkgs";
+    mion-nur.inputs.nixpkgs.follows = "nixpkgs";
     lanzaboote.url = "github:nix-community/lanzaboote/v0.4.2";
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
   };
