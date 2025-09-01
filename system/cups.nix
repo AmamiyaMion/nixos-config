@@ -12,8 +12,8 @@
 
 	# Drivers
 	services.printing.drivers = with pkgs; [
-	  gutenprint
-	  gutenprintBin
+		gutenprint
+		gutenprintBin
 		hplipWithPlugin
 		postscript-lexmark
 		samsung-unified-linux-driver

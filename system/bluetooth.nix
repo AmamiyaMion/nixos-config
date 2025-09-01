@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-	# This is to fix frequent Bluetooth audio dropouts.
+  # This is to fix frequent Bluetooth audio dropouts.
   boot.extraModprobeConfig = ''
     # Keep Bluetooth coexistence disabled for better BT audio stability
     options iwlwifi bt_coex_active=0

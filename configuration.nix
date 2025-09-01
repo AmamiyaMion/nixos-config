@@ -8,12 +8,12 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./nvidia.nix
-      ./nix.nix
-      ./core-system.nix
-      ./fonts.nix
-      ./users.nix
-      ./software.nix
+      ./system/nvidia.nix
+      ./system/nix.nix
+      ./system/core-system.nix
+      ./system/fonts.nix
+      ./system/users.nix
+      ./system/software.nix
     ];
 
   # Copy the NixOS configuration file and link it from the resulting system
