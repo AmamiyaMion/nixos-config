@@ -14,11 +14,10 @@
   boot.loader.systemd-boot.enable = lib.mkForce false; # Lanzaboote currently replaces the systemd-boot module.
   boot.loader.efi.canTouchEfiVariables = true;
   
-	networking.hostName = "Lenovo-82L5"; # Define your hostname.
+  networking.hostName = "Lenovo-82L5"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-  networking.networkmanager.wifi.backend = "iwd";
   networking.hostId = "a12be02d"; # For zfs; Make it random!
 
   # Set your time zone.

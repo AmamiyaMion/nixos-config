@@ -82,7 +82,6 @@
     pciutils
     nethogs
     iotop
-    iwd
     htop
     btop
     hplip
