@@ -9,7 +9,7 @@
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, mion-nur, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, mion-nur, lanzaboote, ... }: {
     nixosConfigurations = {
       Lenovo-82L5 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
