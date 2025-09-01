@@ -5,8 +5,13 @@
     ./bluetooth.nix
     ./cups.nix
   ];
-	# Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
+
+  # Secure Boot
+  boot.lanzaboote = {
+    enable = true;
+    pkiBundle = "/var/lib/sbctl";
+  };
+  boot.loader.systemd-boot.enable = lib.mkForce false; # Lanzaboote currently replaces the systemd-boot module.
   boot.loader.efi.canTouchEfiVariables = true;
   
 	networking.hostName = "Lenovo-82L5"; # Define your hostname.
