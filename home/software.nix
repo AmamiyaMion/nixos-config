@@ -51,5 +51,9 @@
     android-tools
     nixfmt
     nil
+    uv
+    python313Packages.python-lsp-server
+    rust-analyzer
+    clangd
   ];
 }

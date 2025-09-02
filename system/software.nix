@@ -87,6 +87,10 @@
   '';
   security.polkit.enable = true;
 
+  # Emacs
+  services.emacs.enable = true;
+  services.emacs.package = pkgs.emacs-gtk;
+
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
@@ -110,5 +114,6 @@
     mion-nur.bash-pinyin-completion-rs
     xclip
     wl-clipboard
+    fd
   ];
 }
