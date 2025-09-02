@@ -49,5 +49,6 @@
     cargo
     rustc
     android-tools
+    nixfmt
   ];
 }
