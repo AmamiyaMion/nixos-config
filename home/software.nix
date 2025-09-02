@@ -56,5 +56,6 @@
     rust-analyzer
     clang-tools
     papers
+    qq
   ];
 }
