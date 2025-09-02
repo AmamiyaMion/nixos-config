@@ -9,31 +9,40 @@
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, mion-nur, lanzaboote, ... }: {
-    nixosConfigurations = {
-      Lenovo-82L5 = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ({
-            nixpkgs.overlays = [
-              (final: prev: {
-                mion-nur = inputs.mion-nur.packages."${prev.system}";
-              })
-            ];
-          })
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      mion-nur,
+      lanzaboote,
+      ...
+    }:
+    {
+      nixosConfigurations = {
+        Lenovo-82L5 = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ({
+              nixpkgs.overlays = [
+                (final: prev: {
+                  mion-nur = inputs.mion-nur.packages."${prev.system}";
+                })
+              ];
+            })
 
-          lanzaboote.nixosModules.lanzaboote
+            lanzaboote.nixosModules.lanzaboote
 
-          ./configuration.nix
+            ./configuration.nix
 
-	        home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.mion = ./home/home.nix;
-          }
-        ];
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.mion = ./home/home.nix;
+            }
+          ];
+        };
       };
     };
-  };
 }
-

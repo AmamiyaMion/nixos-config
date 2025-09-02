@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   fonts.packages = with pkgs; [
@@ -26,21 +31,32 @@
   # bindfs: solve flatpak CJK font issue
   system.fsPackages = [ pkgs.bindfs ];
 
-  fileSystems = let
-    mkRoSymBind = path: {
-      device = path;
-      fsType = "fuse.bindfs";
-      options = [ "ro" "resolve-symlinks" "x-gvfs-hide" ];
-    };
-    aggregated = pkgs.buildEnv {
+  fileSystems =
+    let
+      mkRoSymBind = path: {
+        device = path;
+        fsType = "fuse.bindfs";
+        options = [
+          "ro"
+          "resolve-symlinks"
+          "x-gvfs-hide"
+        ];
+      };
+      aggregated = pkgs.buildEnv {
         name = "system-fonts-and-icons";
-        paths = config.fonts.packages ++ (with pkgs; [
-          gnome-themes-extra
-        ]);
-        pathsToLink = [ "/share/fonts" "/share/icons" ];
+        paths =
+          config.fonts.packages
+          ++ (with pkgs; [
+            gnome-themes-extra
+          ]);
+        pathsToLink = [
+          "/share/fonts"
+          "/share/icons"
+        ];
+      };
+    in
+    {
+      "/usr/share/fonts" = mkRoSymBind "${aggregated}/share/fonts";
+      "/usr/share/icons" = mkRoSymBind "${aggregated}/share/icons";
     };
-  in {
-    "/usr/share/fonts" = mkRoSymBind "${aggregated}/share/fonts";
-    "/usr/share/icons" = mkRoSymBind "${aggregated}/share/icons";
-  };
 }

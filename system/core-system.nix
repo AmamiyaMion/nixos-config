@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -13,11 +18,11 @@
   };
   boot.loader.systemd-boot.enable = lib.mkForce false; # Lanzaboote currently replaces the systemd-boot module.
   boot.loader.efi.canTouchEfiVariables = true;
-  
+
   networking.hostName = "Lenovo-82L5"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
   networking.hostId = "a12be02d"; # For zfs; Make it random!
 
   # Set your time zone.
@@ -35,11 +40,11 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
-	services.xserver.enable = true;
+  services.xserver.enable = true;
 
-	# Enable the GNOME Desktop Environment.
-	services.displayManager.gdm.enable = true;
-	services.desktopManager.gnome.enable = true;
+  # Enable the GNOME Desktop Environment.
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
   services.gnome.gnome-user-share.enable = true;
   services.gnome.gnome-online-accounts.enable = true;
   services.gnome.gnome-browser-connector.enable = true;

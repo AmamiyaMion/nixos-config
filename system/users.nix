@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -13,12 +18,13 @@
   };
 
   # sudo NOPASSWD
-  security.sudo.extraRules= [
+  security.sudo.extraRules = [
     {
       users = [ "mion" ];
       commands = [
-         { command = "ALL" ;
-           options= [ "NOPASSWD" ]; # "SETENV" # Adding the following could be a good idea
+        {
+          command = "ALL";
+          options = [ "NOPASSWD" ]; # "SETENV" # Adding the following could be a good idea
         }
       ];
     }
