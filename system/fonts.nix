@@ -10,7 +10,6 @@
     fira-code
     fira-code-symbols
     maple-mono.NF
-    mion-nur.msfonts-cjk
   ];
   fonts.fontconfig = {
     antialias = true;
