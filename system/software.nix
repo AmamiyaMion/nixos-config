@@ -91,5 +91,6 @@
     piper
     bat
     sbctl
+    mion-nur.bash-pinyin-completion-rs
   ];
 }

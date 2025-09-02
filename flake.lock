@@ -127,11 +127,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1756733631,
-        "narHash": "sha256-pCfVPjabYJD/Ko+ORZU8K5iW0BvTZx+bWfSrxxeih2E=",
+        "lastModified": 1756784675,
+        "narHash": "sha256-fC4Br77OGKpw7ri5nIIgj9SPIrGMOLvn4TMMNNZdwAA=",
         "owner": "AmamiyaMion",
         "repo": "nur",
-        "rev": "fb1342c852aba7505e40d4bdf02fe835eb7db564",
+        "rev": "8dd69e4ce9e1aefc89e59a82bc58bff456277b42",
         "type": "github"
       },
       "original": {
