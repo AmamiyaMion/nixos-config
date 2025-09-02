@@ -54,7 +54,7 @@
     uv
     python313Packages.python-lsp-server
     rust-analyzer
-    clangd
+    clang-tools
     papers
   ];
 }
