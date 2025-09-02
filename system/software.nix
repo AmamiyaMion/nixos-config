@@ -7,8 +7,9 @@
 
 {
   imports = [
-    ./fcitx.nix
-    ./dae.nix
+    ./software/fcitx.nix
+    ./software/dae.nix
+    ./software/libvirt.nix
   ];
 
   # FireFox
@@ -43,29 +44,6 @@
   # AppImage
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;
-
-  # Virt-manager & libvirt
-  programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = [ "mion" ];
-  virtualisation.libvirtd = {
-    enable = true;
-    qemu = {
-      package = pkgs.qemu_kvm;
-      runAsRoot = true;
-      swtpm.enable = true;
-      ovmf = {
-        enable = true;
-        packages = [
-          (pkgs.OVMF.override {
-            secureBoot = true;
-            tpmSupport = true;
-          }).fd
-        ];
-      };
-    };
-  };
-  virtualisation.spiceUSBRedirection.enable = true;
-  virtualisation.libvirtd.qemu.vhostUserPackages = [ pkgs.virtiofsd ];
 
   # Steam
   programs.steam = {

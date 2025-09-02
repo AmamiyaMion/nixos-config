@@ -7,10 +7,10 @@
 
 {
   imports = [
-    ./ssh.nix
-    ./git.nix
-    ./vscode.nix
-    ./shells.nix
+    ./software/ssh.nix
+    ./software/git.nix
+    ./software/vscode.nix
+    ./software/shells.nix
   ];
 
   # Zoxide
