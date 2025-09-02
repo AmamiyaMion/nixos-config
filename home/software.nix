@@ -55,5 +55,6 @@
     python313Packages.python-lsp-server
     rust-analyzer
     clangd
+    papers
   ];
 }
