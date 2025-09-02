@@ -50,5 +50,6 @@
     rustc
     android-tools
     nixfmt
+    nil
   ];
 }
