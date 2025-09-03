@@ -45,6 +45,9 @@
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;
 
+  # nix-ld
+  programs.nix-ld.enable = true;
+
   # Steam
   programs.steam = {
     enable = true;
@@ -94,5 +97,8 @@
     wl-clipboard
     fd
     ispell
+    libreoffice-fresh
+    hunspell
+    hunspellDicts.en_US
   ];
 }
