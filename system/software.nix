@@ -93,5 +93,6 @@
     xclip
     wl-clipboard
     fd
+    ispell
   ];
 }
