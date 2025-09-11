@@ -55,6 +55,10 @@
     python313Packages.python-lsp-server
     rust-analyzer
     clang-tools
+    guile
+    xmake
+    just
+    psmisc
     papers
     qq
   ];
