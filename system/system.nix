@@ -13,6 +13,7 @@
     ./core/fonts.nix
     ./core/nvidia.nix
     ./core/net.nix
+    ./core/kernel.nix
     ./software.nix
     ./users.nix
   ];
