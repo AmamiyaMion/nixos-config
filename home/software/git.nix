@@ -10,6 +10,7 @@
     enable = true;
     userName = "Amamiya Mion";
     userEmail = "50908468+AmamiyaMion@users.noreply.github.com";
+    lfs.enable = true;
     extraConfig = {
       # For 1Pasword Git SSH Signing
       gpg = {
