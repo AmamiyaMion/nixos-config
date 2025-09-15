@@ -8,7 +8,7 @@
   # Use Lix
   nixpkgs.overlays = [
     (final: prev: {
-      inherit (final.lixPackageSets.stable)
+      inherit (final.lixPackageSets.git)
         nixpkgs-review
         nix-direnv
         nix-eval-jobs
