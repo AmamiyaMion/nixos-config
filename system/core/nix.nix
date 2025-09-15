@@ -5,19 +5,19 @@
   ...
 }:
 {
-  # Use Lix
-  nixpkgs.overlays = [
-    (final: prev: {
-      inherit (final.lixPackageSets.git)
-        nixpkgs-review
-        nix-direnv
-        nix-eval-jobs
-        nix-fast-build
-        colmena
-        ;
-    })
-  ];
-  nix.package = pkgs.lixPackageSets.stable.lix;
+  # Use Lix [Moved to flake.nix]
+  # nixpkgs.overlays = [
+  #   (final: prev: {
+  #     inherit (final.lixPackageSets.git)
+  #       nixpkgs-review
+  #       nix-direnv
+  #       nix-eval-jobs
+  #       nix-fast-build
+  #       colmena
+  #       ;
+  #   })
+  # ];
+  # nix.package = pkgs.lixPackageSets.stable.lix;
 
   # Enable nix command and flakes
   nix.settings.experimental-features = [
