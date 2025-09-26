@@ -61,5 +61,11 @@
     psmisc
     papers
     qq
+    yarn
+    pnpm
+    nodejs
+    deno
+    ffmpeg
+    imagemagick
   ];
 }
