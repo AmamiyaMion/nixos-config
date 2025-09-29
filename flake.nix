@@ -11,7 +11,6 @@
     chaotic.inputs.nixpkgs.follows = "nixpkgs";
     nix-flatpak.url = "github:gmodena/nix-flatpak?ref=latest";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixos-hardware.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =

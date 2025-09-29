@@ -2,11 +2,16 @@
   config,
   lib,
   pkgs,
+  flake-inputs,
   ...
 }:
 
 {
+  imports = [
+    flake-inputs.nix-flatpak.homeManagerModules.nix-flatpak
+  ];
   services.flatpak.enable = true;
+  services.flatpak.update.onActivation = true;
   services.flatpak.packages = [
     "com.github.tchx84.Flatseal"
     "com.mattjakeman.ExtensionManager"
