@@ -72,6 +72,9 @@
   services.emacs.enable = true;
   services.emacs.package = pkgs.emacs-gtk;
 
+  # direnv
+  programs.direnv.enable = true;
+
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [

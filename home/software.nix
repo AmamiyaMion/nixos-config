@@ -67,5 +67,10 @@
     deno
     ffmpeg
     imagemagick
+    darktable
+    davinci-resolve
+    github-desktop
+    gh
+    go
   ];
 }

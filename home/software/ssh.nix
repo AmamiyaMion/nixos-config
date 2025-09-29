@@ -8,6 +8,7 @@
 {
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
     # 1Password SSH Agent
     # extraConfig = ''
     #   Host *
