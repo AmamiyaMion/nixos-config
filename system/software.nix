@@ -15,6 +15,9 @@
   # FireFox
   programs.firefox.enable = true;
 
+  # Flatpak
+  services.flatpak.enable = true;
+
   # Clash Verge Rev
   programs.clash-verge.enable = true;
   programs.clash-verge.autoStart = true;

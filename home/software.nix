@@ -72,5 +72,6 @@
     github-desktop
     gh
     go
+    gnome-software
   ];
 }
