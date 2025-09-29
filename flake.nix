@@ -61,7 +61,6 @@
 
             nix-flatpak.nixosModules.nix-flatpak # nix-flatpak
 
-
             ./configuration.nix
 
             home-manager.nixosModules.home-manager
