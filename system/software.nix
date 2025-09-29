@@ -10,13 +10,11 @@
     ./software/fcitx.nix
     ./software/dae.nix
     ./software/libvirt.nix
+    ./software/flatpak.nix
   ];
 
   # FireFox
   programs.firefox.enable = true;
-
-  # Flatpak
-  services.flatpak.enable = true;
 
   # Clash Verge Rev
   programs.clash-verge.enable = true;
