@@ -60,7 +60,6 @@
     just
     psmisc
     papers
-    qq
     yarn
     pnpm
     nodejs
