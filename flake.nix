@@ -59,14 +59,13 @@
 
             nixos-hardware.nixosModules.lenovo-ideapad-15ach6 # nixos-hardware 82L5
 
-            nix-flatpak.nixosModules.nix-flatpak # nix-flatpak
-
             ./configuration.nix
 
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs.flake-inputs = inputs;
               home-manager.users.mion = ./home/home.nix;
             }
           ];

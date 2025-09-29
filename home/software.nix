@@ -2,15 +2,18 @@
   config,
   lib,
   pkgs,
+  flake-inputs,
   ...
 }:
 
 {
   imports = [
+    flake-inputs.flatpaks.homeManagerModules.nix-flatpak
     ./software/ssh.nix
     ./software/git.nix
     ./software/vscode.nix
     ./software/shells.nix
+    ./software/flatpak.nix
   ];
 
   # Zoxide

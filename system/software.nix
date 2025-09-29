@@ -10,7 +10,6 @@
     ./software/fcitx.nix
     ./software/dae.nix
     ./software/libvirt.nix
-    ./software/flatpak.nix
   ];
 
   # FireFox
