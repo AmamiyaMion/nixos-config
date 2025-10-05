@@ -73,5 +73,6 @@
     gh
     go
     gnome-software
+    nix-index
   ];
 }
