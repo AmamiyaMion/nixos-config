@@ -23,7 +23,7 @@
       "org.localsend.localsend_app"
     ];
     overrides = {
-      global = {
+      global.Context = {
         filesystems = [
           "/home/mion/.local/share/fonts:ro"
           "/home/mion/.icons:ro"
