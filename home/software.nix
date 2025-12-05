@@ -33,12 +33,12 @@
 
   home.packages = with pkgs; [
     gnome-tweaks
-    thunderbird
+    evolution
     telegram-desktop
     fastfetch
     hyfetch
     fractal
-    (hiPrio gcc)
+    (lib.hiPrio gcc)
     gdb
     llvm
     lldb
@@ -74,5 +74,8 @@
     go
     gnome-software
     nix-index
+    file-roller
+    wemeet
+    file
   ];
 }

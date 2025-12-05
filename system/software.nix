@@ -36,6 +36,8 @@
       text = ''
         google-chrome-stable
         firefox
+        zen
+        zen-bin
       '';
       mode = "0755";
     };
@@ -59,13 +61,6 @@
   # ratbagd (for piper)
   services.ratbagd.enable = true;
 
-  # For OBS Studio Virtual Camera: v2l4loopback kernel module
-  boot.extraModulePackages = with config.boot.kernelPackages; [
-    v4l2loopback
-  ];
-  boot.extraModprobeConfig = ''
-    options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
-  '';
   security.polkit.enable = true;
 
   # Emacs
@@ -77,31 +72,33 @@
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    micro
-    lshw
-    gtop # for GNOME Shell Plugin
-    pciutils
-    nethogs
-    iotop
-    htop
-    btop
-    hplip
-    ripgrep
-    iw
-    amdgpu_top
-    piper
-    bat
-    sbctl
-    mion-nur.bash-pinyin-completion-rs
-    xclip
-    wl-clipboard
-    fd
-    ispell
-    libreoffice-fresh
-    hunspell
-    hunspellDicts.en_US
-  ];
+  environment.systemPackages =
+    with pkgs;
+    [
+      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      wget
+      micro
+      lshw
+      gtop # for GNOME Shell Plugin
+      pciutils
+      nethogs
+      iotop
+      htop
+      btop
+      hplip
+      ripgrep
+      iw
+      amdgpu_top
+      piper
+      bat
+      sbctl
+      xclip
+      wl-clipboard
+      fd
+      ispell
+      libreoffice-fresh
+      hunspell
+      hunspellDicts.en_US
+      zen-browser.default
+    ];
 }

@@ -18,19 +18,13 @@
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
 
-  # Tailscale
-  services.tailscale.enable = true;
+  services.zerotierone.enable = true;
 
   networking.nameservers = [
-    # "100.100.100.100" # Tailscale DNS: for Tailscale MagicDNS
     "119.29.29.29" # Tencent
     "223.5.5.5" # AliDNS
     "8.8.4.4" # Google
     "1.1.1.1" # Cloudflare
     "9.9.9.9" # Quad9
   ];
-  # networking.search = [
-  #   "taild9dbd6.ts.net" # Tailscale DNS: for Tailscale MagicDNS
-  # ];
-
 }

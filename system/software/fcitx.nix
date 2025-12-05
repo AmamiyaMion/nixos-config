@@ -13,8 +13,7 @@
       fcitx5-mozc
       fcitx5-gtk
       kdePackages.fcitx5-qt
-      fcitx5-chinese-addons
-      fcitx5-table-extra
+      qt6Packages.fcitx5-chinese-addons
     ];
   };
 }

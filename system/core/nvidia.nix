@@ -38,7 +38,7 @@
     # supported GPUs is at:
     # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
     # Only available from driver 515.43.04+
-    open = true;
+    open = false;
 
     # Enable the Nvidia settings menu,
     # accessible via `nvidia-settings`.
@@ -48,11 +48,11 @@
     package = config.boot.kernelPackages.nvidiaPackages.beta;
 
     # PRIME
-    prime = {
-      sync.enable = true;
+    # prime = {
+    #   sync.enable = true;
 
-      amdgpuBusId = "PCI:5:0:0";
-      nvidiaBusId = "PCI:1:0:0";
-    };
+    #   amdgpuBusId = "PCI:5:0:0";
+    #   nvidiaBusId = "PCI:1:0:0";
+    # };
   };
 }

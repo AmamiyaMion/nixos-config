@@ -19,20 +19,26 @@
       "com.gopeed.Gopeed"
       "com.qq.QQ"
       "com.tencent.WeChat"
-      "com.tencent.wemeet"
-      "com.spotify.Client"
       "com.usebottles.bottles"
       "org.localsend.localsend_app"
     ];
     overrides = {
+      global = {
+        filesystems = [
+          "/home/mion/.local/share/fonts:ro"
+          "/home/mion/.icons:ro"
+          "/nix/store:ro"
+          "/run/current-system/sw/share/X11/fonts:ro"
+        ];
+      };
       "com.tencent.WeChat".Context = {
         filesystems = [
-          "xdg-download"
+          "xdg-download/WeChat"
         ];
       };
       "com.qq.QQ".Context = {
         filesystems = [
-          "xdg-download"
+          "xdg-download/QQ"
         ];
       };
     };

@@ -8,10 +8,10 @@
 {
   programs.git = {
     enable = true;
-    userName = "Amamiya Mion";
-    userEmail = "50908468+AmamiyaMion@users.noreply.github.com";
     lfs.enable = true;
-    extraConfig = {
+    settings = {
+      user.name = "Amamiya Mion";
+      user.email = "amamiya_mion@outlook.com";
       # For 1Pasword Git SSH Signing
       gpg = {
         format = "ssh";

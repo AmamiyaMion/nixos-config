@@ -11,6 +11,8 @@
     chaotic.inputs.nixpkgs.follows = "nixpkgs";
     nix-flatpak.url = "github:gmodena/nix-flatpak?ref=latest";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    zen-browser.url = "github:youwen5/zen-browser-flake";
+    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -23,6 +25,7 @@
       chaotic,
       nix-flatpak,
       nixos-hardware,
+      zen-browser,
       ...
     }:
     {
@@ -34,20 +37,8 @@
               nixpkgs.overlays = [
                 # My NUR
                 (final: prev: {
-                  mion-nur = inputs.mion-nur.packages."${prev.system}";
-                })
-
-                # fix Tailscale build
-                (_: prev: {
-                  tailscale = prev.tailscale.overrideAttrs (old: {
-                    checkFlags = builtins.map (
-                      flag:
-                      if prev.lib.hasPrefix "-skip=" flag then
-                        flag + "|^TestGetList$|^TestIgnoreLocallyBoundPorts$|^TestPoller$"
-                      else
-                        flag
-                    ) old.checkFlags;
-                  });
+                  mion-nur = inputs.mion-nur.packages."${prev.stdenv.hostPlatform.system}";
+                  zen-browser = inputs.zen-browser.packages."${prev.stdenv.hostPlatform.system}";
                 })
               ];
             })

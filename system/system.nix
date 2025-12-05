@@ -11,7 +11,7 @@
     ./core/cups.nix
     ./core/nix.nix
     ./core/fonts.nix
-    # ./core/nvidia.nix
+    ./core/nvidia.nix
     ./core/net.nix
     ./core/kernel.nix
     ./software.nix
@@ -19,11 +19,12 @@
   ];
 
   # Secure Boot
-  boot.lanzaboote = {
-    enable = true;
-    pkiBundle = "/var/lib/sbctl";
-  };
-  boot.loader.systemd-boot.enable = lib.mkForce false; # Lanzaboote currently replaces the systemd-boot module.
+  # boot.lanzaboote = {
+  #   enable = true;
+  #   pkiBundle = "/var/lib/sbctl";
+  # };
+  # boot.loader.systemd-boot.enable = lib.mkForce false; # Lanzaboote currently replaces the systemd-boot module.
+  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Set your time zone.
@@ -80,4 +81,6 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
+  # Enable power-profiles-daemon
+  services.power-profiles-daemon.enable = true;
 }
