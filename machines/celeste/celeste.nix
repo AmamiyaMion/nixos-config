@@ -28,6 +28,7 @@
     ../../global/system/libvirt.nix
     ../../global/system/dae.nix
     ../../global/system/emacs.nix
+    ../../global/system/kmscon.nix
 
     ../../global/system/gnome.nix
 
