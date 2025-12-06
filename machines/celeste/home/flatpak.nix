@@ -12,7 +12,10 @@
   ];
   services.flatpak = {
     enable = true;
-    update.onActivation = true;
+    update.auto = {
+      enable = true;
+      onCalendar = "daily";
+    };
     packages = [
       "com.github.tchx84.Flatseal"
       "com.mattjakeman.ExtensionManager"
