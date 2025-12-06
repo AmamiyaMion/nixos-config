@@ -36,6 +36,7 @@
     ./system/fix-iwlwifi-bluetooth.nix
     ./system/nvidia.nix
     ./system/users.nix
+    ./system/boot.nix
 
     ./software/1password.nix
     ./software/misc.nix
@@ -44,9 +45,6 @@
 
   networking.hostName = "celeste"; # Define your hostname.
   networking.hostId = "a12be02d"; # For zfs; Make it random!
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;

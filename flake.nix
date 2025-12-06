@@ -11,6 +11,8 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     zen-browser.url = "github:youwen5/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+    lanzaboote.url = "github:nix-community/lanzaboote/master";
+    lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -23,6 +25,7 @@
       nix-flatpak,
       nixos-hardware,
       zen-browser,
+      lanzaboote,
       ...
     }:
     {
@@ -39,6 +42,8 @@
                 })
               ];
             })
+
+            lanzaboote.nixosModules.lanzaboote # lanzaboote (Secure Boot)
 
             chaotic.nixosModules.default # Chaotic-Nyx Repository
 

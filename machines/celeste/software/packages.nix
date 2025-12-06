@@ -26,6 +26,7 @@
     piper
     bat
     sbctl
+    tpm2-tss
     xclip
     wl-clipboard
     fd
