@@ -6,14 +6,6 @@
 }:
 
 {
-  imports = [
-    ./software/ssh.nix
-    ./software/git.nix
-    ./software/vscode.nix
-    ./software/shells.nix
-    ./software/flatpak.nix
-  ];
-
   # Zoxide
   programs.zoxide.enable = true;
   programs.zoxide.enableBashIntegration = true;

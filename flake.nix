@@ -5,8 +5,6 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     mion-nur.url = "github:AmamiyaMion/nur";
     mion-nur.inputs.nixpkgs.follows = "nixpkgs";
-    lanzaboote.url = "github:nix-community/lanzaboote/v0.4.2";
-    lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     chaotic.inputs.nixpkgs.follows = "nixpkgs";
     nix-flatpak.url = "github:gmodena/nix-flatpak?ref=latest";
@@ -21,7 +19,6 @@
       nixpkgs,
       home-manager,
       mion-nur,
-      lanzaboote,
       chaotic,
       nix-flatpak,
       nixos-hardware,
@@ -30,33 +27,31 @@
     }:
     {
       nixosConfigurations = {
-        Lenovo-82L5 = nixpkgs.lib.nixosSystem {
+        celeste = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ({
               nixpkgs.overlays = [
-                # My NUR
                 (final: prev: {
+                  # My NUR
                   mion-nur = inputs.mion-nur.packages."${prev.stdenv.hostPlatform.system}";
                   zen-browser = inputs.zen-browser.packages."${prev.stdenv.hostPlatform.system}";
                 })
               ];
             })
 
-            lanzaboote.nixosModules.lanzaboote # Secure Boot
-
             chaotic.nixosModules.default # Chaotic-Nyx Repository
 
             nixos-hardware.nixosModules.lenovo-ideapad-15ach6 # nixos-hardware 82L5
 
-            ./configuration.nix
+            ./machines/celeste/celeste.nix
 
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs.flake-inputs = inputs;
-              home-manager.users.mion = ./home/home.nix;
+              home-manager.users.mion = ./machines/celeste/home/home.nix;
             }
           ];
         };

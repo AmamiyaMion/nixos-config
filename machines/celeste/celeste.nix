@@ -12,9 +12,41 @@
 {
   imports = [
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ./system/system.nix
+    ./system/hardware-configuration.nix
+
+    ../../global/system/binary-compatibility.nix
+    ../../global/system/bluetooth.nix
+    ../../global/system/cups.nix
+    ../../global/system/fonts.nix
+    ../../global/system/kernel.nix
+    ../../global/system/net.nix
+    ../../global/system/nix.nix
+    ../../global/system/tzlocale.nix
+    ../../global/system/misc-software.nix
+
+    ../../global/system/fcitx.nix
+    ../../global/system/libvirt.nix
+    ../../global/system/dae.nix
+    ../../global/system/emacs.nix
+
+    ../../global/system/gnome.nix
+
+    ./system/1password.nix
+    ./system/fix-iwlwifi-bluetooth.nix
+    ./system/nvidia.nix
+    ./system/software.nix
+    ./system/steam.nix
+    ./system/users.nix
   ];
+
+  networking.hostName = "celeste"; # Define your hostname.
+  networking.hostId = "a12be02d"; # For zfs; Make it random!
+
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  # Enable the OpenSSH daemon.
+  # services.openssh.enable = true;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you

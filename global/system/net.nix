@@ -6,11 +6,13 @@
 }:
 
 {
-  networking.hostName = "Lenovo-82L5"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
-  networking.hostId = "a12be02d"; # For zfs; Make it random!
+
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -27,4 +29,9 @@
     "1.1.1.1" # Cloudflare
     "9.9.9.9" # Quad9
   ];
+
+  # Clash Verge Rev
+  programs.clash-verge.enable = true;
+  programs.clash-verge.autoStart = true;
+  programs.clash-verge.serviceMode = true;
 }

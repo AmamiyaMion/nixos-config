@@ -8,6 +8,13 @@
 {
   imports = [
     ./software.nix
+    ./flatpak.nix
+
+    ../../../global/home/git.nix
+    ../../../global/home/shells.nix
+    ../../../global/home/ssh.nix
+    ../../../global/home/vscode.nix
+
   ];
   # Home Manager needs a bit of information about you and the
   # paths it should manage.

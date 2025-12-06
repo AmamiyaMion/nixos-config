@@ -26,18 +26,4 @@
     # Set power scheme for performance (iwlmvm)
     options iwlmvm power_scheme=1
   '';
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-    settings = {
-      General = {
-        ControllerMode = "bredr"; # Fix frequent Bluetooth audio dropouts
-        Experimental = true;
-        FastConnectable = true;
-      };
-      Policy = {
-        AutoEnable = true;
-      };
-    };
-  };
 }
