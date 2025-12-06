@@ -15,7 +15,7 @@
 
   # PolicyKit
   security.polkit.enable = true;
-  
+
   # direnv
   programs.direnv.enable = true;
 }

@@ -13,4 +13,7 @@
     enable = true;
     enableBashIntegration = true;
   };
+  # Zoxide
+  programs.zoxide.enable = true;
+  programs.zoxide.enableBashIntegration = true;
 }

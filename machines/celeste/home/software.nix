@@ -6,10 +6,6 @@
 }:
 
 {
-  # Zoxide
-  programs.zoxide.enable = true;
-  programs.zoxide.enableBashIntegration = true;
-
   # OBS Studio
   programs.obs-studio = {
     enable = true;
@@ -69,5 +65,8 @@
     file-roller
     wemeet
     file
+    nixfmt
+    nixfmt-tree
+    cider-2
   ];
 }
