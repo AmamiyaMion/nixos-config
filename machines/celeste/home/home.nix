@@ -7,8 +7,9 @@
 
 {
   imports = [
-    ./software.nix
+    ./packages.nix
     ./flatpak.nix
+    ./obs-studio.nix
 
     ../../../global/home/git.nix
     ../../../global/home/shells.nix

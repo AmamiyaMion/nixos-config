@@ -22,22 +22,24 @@
     ../../global/system/net.nix
     ../../global/system/nix.nix
     ../../global/system/tzlocale.nix
-    ../../global/system/misc-software.nix
 
-    ../../global/system/fcitx.nix
-    ../../global/system/libvirt.nix
-    ../../global/system/dae.nix
-    ../../global/system/emacs.nix
-    ../../global/system/kmscon.nix
+    ../../global/software/misc.nix
+    ../../global/software/fcitx.nix
+    ../../global/software/libvirt.nix
+    ../../global/software/dae.nix
+    ../../global/software/emacs.nix
+    ../../global/software/kmscon.nix
+    ../../global/software/steam.nix
 
-    ../../global/system/gnome.nix
+    ../../global/desktops/gnome.nix
 
-    ./system/1password.nix
     ./system/fix-iwlwifi-bluetooth.nix
     ./system/nvidia.nix
-    ./system/software.nix
-    ./system/steam.nix
     ./system/users.nix
+
+    ./software/1password.nix
+    ./software/misc.nix
+    ./software/packages.nix
   ];
 
   networking.hostName = "celeste"; # Define your hostname.
